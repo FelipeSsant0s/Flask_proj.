@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{%block conteudo%}
+<h2 style="text-align: center;">Catalogo de serviços</h2>
+<hr>
+
+<br>
+<div class="container-fluid">
+<a href="{{url_for('cria_catalogo')}}" class="btn btn-secondary" >Adcionar</a>
+<br><br>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>            
+            <th scope="col">Nome</th>
+            <th scope="col">Complexidade</th>
+            <th scope="col">Escopo</th>
+            <th scope="col">Tempo limite</th>
+            <th scope="col">Entregaveis</th>
+            <th scope="col">Perfil exigido</th>
+            <th scope="col">Atividades desempenhadas</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {%for catalogo in catalogos %}
+            <tr>                
+                <th>{{catalogo[1]}}</th>
+                <th>{{catalogo[2]}}</th>
+                <th>{{catalogo[3]}}</th>
+                <th>{{catalogo[4]}}</th>
+                <th>{{catalogo[5]}}</th>
+                <th>{{catalogo[6]}}</th>
+                <th>{{catalogo[7]}}</th>
+            </tr>
+        
+        {%endfor%}
+        
+        
+    </tbody>
+</table>
+</div>
+
+{% endblock conteudo %}
